@@ -23,10 +23,14 @@ app.set('view engine','ejs')
 app.set('views',__dirname + '/views')
 //hook up express latouts, set where the layout files are
 app.set('layout','layouts/layout')
+//app.set('public', __dirname + '/public'); 
 //tell the express that we want to use the layout
 app.use(expressLayouts)
 //tell where are the public files are
+
 app.use(express.static('public'))
+//app.use(express.static(__dirname + '/public'))
+
 app.use(bodyParser.urlencoded({limit : '10mb'  ,extended : false}))
 app.use(methodOverride('_method'))
 
